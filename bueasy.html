@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuEasy — Business Made Best | AI Automation Agency</title>
+<meta name="description" content="BuEasy builds intelligent AI automation systems for customer support, lead generation, and business operations. Schedule a free discovery call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --white:#ffffff;
+  --bg-sec:#f7f7f7;
+  --blue:#1a56db;
+  --blue-hover:#1646b8;
+  --blue-light:#4f7cff;
+  --blue-bg:#eff4ff;
+  --text:#111111;
+  --text-sec:#666666;
+  --text-ter:#999999;
+  --border:#e5e5e5;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.04);
+  --shadow-lg:0 12px 32px rgba(0,0,0,.1),0 4px 12px rgba(0,0,0,.05);
+  --font:'Plus Jakarta Sans',sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font);cursor:pointer;border:none;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* ── FOCUS ── */
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:-0.01em;transition:all .2s ease;cursor:pointer;text-decoration:none}
+.btn-primary{background:var(--blue);color:#fff;border:1.5px solid var(--blue)}
+.btn-primary:hover{background:var(--blue-hover);border-color:var(--blue-hover);box-shadow:0 4px 14px rgba(26,86,219,.3);transform:translateY(-1px)}
+.btn-primary:active{transform:translateY(0);box-shadow:0 2px 6px rgba(26,86,219,.2)}
+.btn-secondary{background:var(--white);color:var(--text);border:1.5px solid var(--border)}
+.btn-secondary:hover{border-color:#ccc;box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.btn-secondary:active{transform:translateY(0)}
+.btn-lg{padding:14px 28px;font-size:16px}
+.btn-xl{padding:16px 32px;font-size:17px}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:box-shadow .2s}
+nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1200px;margin:0 auto;padding:0 32px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:-0.03em;color:var(--text);flex-shrink:0}
+.nav-logo-mark{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-logo-mark svg{display:block}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{padding:8px 14px;border-radius:6px;font-size:15px;font-weight:500;color:var(--text-sec);transition:color .15s,background .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--bg-sec)}
+.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-login{font-size:15px;font-weight:500;color:var(--text-sec);padding:8px 14px;border-radius:6px;transition:color .15s}
+.nav-login:hover{color:var(--text)}
+.btn-nav{font-family:var(--font);font-size:14px;font-weight:600;color:#fff;background:var(--blue);border:none;padding:10px 20px;border-radius:7px;cursor:pointer;transition:all .2s;letter-spacing:0;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.btn-nav:hover{background:var(--blue-hover);box-shadow:0 4px 12px rgba(26,86,219,.25);transform:translateY(-1px)}
+
+/* Hamburger */
+.hamburger{display:none;width:40px;height:40px;border-radius:6px;align-items:center;justify-content:center;cursor:pointer;transition:background .15s;flex-shrink:0}
+.hamburger:hover{background:var(--bg-sec)}
+.hamburger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:all .25s ease;position:absolute}
+.hamburger span:nth-child(1){transform:translateY(-6px)}
+.hamburger span:nth-child(3){transform:translateY(6px)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg)}
+
+/* Mobile menu */
+.mobile-menu{display:none;flex-direction:column;padding:12px 24px 20px;border-top:1px solid var(--border);background:var(--white);opacity:0;transform:translateY(-8px);transition:opacity .2s ease,transform .2s ease}
+.mobile-menu.open{display:flex;opacity:1;transform:translateY(0)}
+.mobile-menu a{padding:14px 4px;font-size:16px;font-weight:500;color:var(--text-sec);border-bottom:1px solid var(--border);transition:color .15s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover{color:var(--text)}
+.mobile-menu .btn{margin-top:16px;justify-content:center}
+
+/* ── HERO ── */
+.hero{padding:96px 0 72px}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;padding:0 32px}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;background:var(--blue-bg);border:1px solid rgba(26,86,219,.18);border-radius:100px;font-size:13px;font-weight:600;color:var(--blue);margin-bottom:24px}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:badge-pulse 2.4s ease-in-out infinite}
+@keyframes badge-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(26,86,219,.4)}50%{opacity:.7;box-shadow:0 0 0 4px rgba(26,86,219,0)}}
+.hero h1{font-size:clamp(2.6rem,4.5vw,3.75rem);font-weight:800;line-height:1.08;letter-spacing:-0.04em;color:var(--text);margin-bottom:22px}
+.hero h1 .accent{color:var(--blue)}
+.hero-sub{font-size:1.125rem;line-height:1.75;color:var(--text-sec);font-weight:400;margin-bottom:36px;max-width:480px}
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hero-note{margin-top:18px;font-size:13px;color:var(--text-ter);display:flex;align-items:center;gap:6px}
+.hero-note svg{flex-shrink:0}
+
+/* Workflow SVG Panel */
+.hero-visual{background:var(--bg-sec);border:1px solid var(--border);border-radius:16px;padding:32px 28px;position:relative;overflow:hidden}
+.hero-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,86,219,.03) 0%,transparent 60%);pointer-events:none;border-radius:16px}
+
+/* ── LOGOS BAR ── */
+.logos-bar{padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.logos-label{text-align:center;font-size:13px;font-weight:500;color:var(--text-ter);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px}
+.logos-row{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.logo-item{font-size:18px;font-weight:700;color:#c0c8d4;letter-spacing:-0.03em;transition:color .2s;user-select:none}
+.logo-item:hover{color:#8a94a8}
+
+/* ── SECTION SHARED ── */
+.section{padding:104px 0}
+.section-alt{background:var(--bg-sec)}
+.section-tag{display:inline-block;font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:clamp(1.9rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.035em;line-height:1.15;color:var(--text);margin-bottom:16px}
+.section-sub{font-size:1.0625rem;color:var(--text-sec);line-height:1.75;max-width:560px}
+.section-header{margin-bottom:56px}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:0 auto}
+
+/* ── PROBLEM CARDS ── */
+.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.problem-card{background:var(--white);padding:36px 32px;transition:background .2s;position:relative}
+.problem-card:hover{background:#fafbff}
+.problem-card-icon{width:44px;height:44px;border-radius:10px;background:var(--bg-sec);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.problem-card h3{font-size:17px;font-weight:700;letter-spacing:-0.02em;color:var(--text);margin-bottom:8px}
+.problem-card p{font-size:15px;color:var(--text-sec);line-height:1.65}
+/* Card dividers — borders between adjacent cards */
+.problem-card:nth-child(2),.problem-card:nth-child(4){border-left:1px solid var(--border)}
+.problem-card:nth-child(3),.problem-card:nth-child(4){border-top:1px solid var(--border)}
+
+/* ── SOLUTIONS GRID ── */
+.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sol-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 26px;transition:all .2s ease}
+.sol-card:hover{box-shadow:var(--shadow-md);border-color:#d0d8ee;transform:translateY(-3px)}
+.sol-card-icon{width:42px;height:42px;border-radius:10px;background:var(--blue-bg);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.sol-card h3{font-size:16px;font-weight:700;letter-spacing:-0.02em;color:var(--text);margin-bottom:8px}
+.sol-card p{font-size:14.5px;color:var(--text-sec);line-height:1.65}
+
+/* ── HOW IT WORKS ── */
+.hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.hiw-line{position:absolute;top:36px;left:calc(16.67% + 36px);right:calc(16.67% + 36px);height:2px;z-index:0;background:var(--border);overflow:hidden}
+.hiw-line::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--blue) 0%,var(--blue) 50%,var(--border) 50%);background-size:200% 100%;animation:line-fill 3s ease forwards;animation-delay:1s}
+@keyframes line-fill{from{background-position:100% 0}to{background-position:0 0}}
+.hiw-step{text-align:center;padding:0 20px;position:relative;z-index:1}
+.hiw-num{width:72px;height:72px;border-radius:50%;background:var(--white);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:22px;font-weight:800;color:var(--blue);letter-spacing:-0.03em;box-shadow:var(--shadow-sm);transition:all .3s ease}
+.hiw-step.active .hiw-num{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 16px rgba(26,86,219,.3)}
+.hiw-step h3{font-size:18px;font-weight:700;letter-spacing:-0.02em;color:var(--text);margin-bottom:10px}
+.hiw-step p{font-size:15px;color:var(--text-sec);line-height:1.65}
+.hiw-step-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);letter-spacing:.05em;text-transform:uppercase;background:var(--blue-bg);padding:4px 10px;border-radius:100px;margin-bottom:14px}
+
+/* ── CASE STUDIES ── */
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cs-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .22s ease;display:flex;flex-direction:column}
+.cs-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);border-color:#d0d8ee}
+.cs-card-top{padding:28px 26px 20px;border-bottom:1px solid var(--border);flex:1}
+.cs-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);background:var(--blue-bg);padding:4px 10px;border-radius:100px;margin-bottom:14px;letter-spacing:.04em}
+.cs-card-top h3{font-size:16px;font-weight:700;letter-spacing:-0.02em;color:var(--text);margin-bottom:8px;line-height:1.4}
+.cs-card-top p{font-size:14px;color:var(--text-sec);line-height:1.65}
+.cs-card-metrics{padding:20px 26px;display:flex;flex-direction:column;gap:12px}
+.cs-metric{display:flex;align-items:center;gap:12px}
+.cs-metric-num{font-size:22px;font-weight:800;color:var(--blue);letter-spacing:-0.04em;min-width:56px}
+.cs-metric-label{font-size:13px;color:var(--text-sec);line-height:1.35}
+.cs-card-footer{padding:16px 26px;background:var(--bg-sec);border-top:1px solid var(--border);font-size:13px;font-weight:600;color:var(--blue);display:flex;align-items:center;gap:6px;transition:background .15s,gap .15s;cursor:pointer}
+.cs-card-footer:hover{background:#eef1f6;gap:10px}
+
+/* ── TESTIMONIALS ── */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.test-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 26px;transition:all .2s ease;display:flex;flex-direction:column}
+.test-card:hover{box-shadow:var(--shadow-md);border-color:#d0d8ee}
+.test-stars{display:flex;gap:3px;margin-bottom:16px}
+.test-quote{font-size:15px;line-height:1.7;color:var(--text-sec);margin-bottom:auto;padding-bottom:22px}
+.test-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--border)}
+.test-avatar{width:40px;height:40px;border-radius:50%;background:var(--blue-bg);border:2px solid rgba(26,86,219,.12);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--blue);flex-shrink:0}
+.test-name{font-size:14px;font-weight:700;color:var(--text);letter-spacing:-0.01em}
+.test-role{font-size:13px;color:var(--text-sec)}
+
+/* ── STATS STRIP ── */
+.stats-strip{padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.stat-item{padding:0 24px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-0.05em;color:var(--text);line-height:1}
+.stat-num span{color:var(--blue)}
+.stat-label{font-size:14px;color:var(--text-sec);margin-top:6px;line-height:1.4}
+
+/* ── CTA SECTION ── */
+.cta-section{padding:96px 0}
+.cta-inner{max-width:720px;margin:0 auto;text-align:center;padding:0 32px}
+.cta-box{background:var(--bg-sec);border:1px solid var(--border);border-radius:20px;padding:64px 56px;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 0%,rgba(26,86,219,.04) 0%,transparent 60%);pointer-events:none}
+.cta-box h2{font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-0.04em;line-height:1.12;color:var(--text);margin-bottom:18px;position:relative}
+.cta-box h2 .accent{color:var(--blue)}
+.cta-box>p{font-size:1.0625rem;color:var(--text-sec);line-height:1.75;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+.cta-box .btn{position:relative}
+.cta-sub{margin-top:14px;font-size:13px;color:var(--text-ter);position:relative}
+
+/* ── FOOTER ── */
+footer{background:#0e1117;color:#a0a8b8;padding:64px 0 32px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:14px}
+.footer-logo-mark{width:28px;height:28px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.footer-desc{font-size:14px;line-height:1.7;max-width:260px;margin-bottom:24px}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:34px;height:34px;border-radius:7px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:all .15s;color:#a0a8b8}
+.footer-social a:hover{background:rgba(255,255,255,.12);color:#fff}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:14px;color:#a0a8b8;transition:color .15s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:28px;font-size:13px;flex-wrap:wrap;gap:12px}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{color:#a0a8b8;transition:color .15s}
+.footer-bottom-links a:hover{color:#fff}
+
+/* ── FADE IN ── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+.fade-in[data-delay="1"]{transition-delay:.08s}
+.fade-in[data-delay="2"]{transition-delay:.16s}
+.fade-in[data-delay="3"]{transition-delay:.24s}
+.fade-in[data-delay="4"]{transition-delay:.32s}
+.fade-in[data-delay="5"]{transition-delay:.4s}
+
+/* ── BACK TO TOP ── */
+.back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;z-index:99;opacity:0;pointer-events:none;transform:translateY(8px);transition:all .25s ease;cursor:pointer}
+.back-top.show{opacity:1;pointer-events:auto;transform:none}
+.back-top:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:#ccc}
+
+/* ── REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .fade-in{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-visual{max-width:520px}
+  .problem-grid{grid-template-columns:1fr}
+  .problem-card:nth-child(2),.problem-card:nth-child(4){border-left:none}
+  .problem-card+.problem-card{border-top:1px solid var(--border)}
+  .solutions-grid{grid-template-columns:repeat(2,1fr)}
+  .hiw-steps{grid-template-columns:1fr;gap:36px}
+  .hiw-line{display:none}
+  .cs-grid{grid-template-columns:1fr;max-width:480px}
+  .test-grid{grid-template-columns:1fr;max-width:480px}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:32px}
+  .stat-item{border-right:none;padding:12px 0}
+  .stat-item:nth-child(1),.stat-item:nth-child(2){border-bottom:1px solid var(--border);padding-bottom:32px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px}
+  .nav-links{display:none}
+  .nav-right .nav-login{display:none}
+  .hamburger{display:flex;position:relative}
+  .section{padding:72px 0}
+}
+@media(max-width:600px){
+  .container{padding:0 20px}
+  .solutions-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .hero{padding:72px 0 56px}
+  .hero-inner{gap:36px;padding:0 20px}
+  .hero-visual{padding:24px 20px}
+  .cta-box{padding:40px 28px}
+  .logos-row{gap:24px}
+  .logo-item{font-size:16px}
+  .nav-inner{padding:0 20px}
+  .section{padding:56px 0}
+  .stats-inner{grid-template-columns:1fr;gap:24px}
+  .stat-item{border-bottom:1px solid var(--border);padding-bottom:24px;border-right:none}
+  .stat-item:last-child{border-bottom:none;padding-bottom:0}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ██████ NAV ██████ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="BuEasy homepage">
+      <div class="nav-logo-mark">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M9 2L15.5 6V12L9 16L2.5 12V6L9 2Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="9" cy="9" r="2.5" fill="white"/>
+        </svg>
+      </div>
+      BuEasy
+    </a>
+
+    <div class="nav-links">
+      <a href="#solutions">Solutions</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#testimonials">Clients</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="#" class="nav-login">Sign in</a>
+      <a href="#contact" class="btn-nav">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1.5" y="2.5" width="11" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 1.5v2M9 1.5v2M1.5 5.5h11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Schedule a Call
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#solutions">Solutions</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#contact" class="btn btn-primary" style="margin-top:12px">Schedule a Call</a>
+  </div>
+</nav>
+
+<!-- ██████ HERO ██████ -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-left fade-in">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        AI Automation Agency
+      </div>
+      <h1>Automate Your<br>Business With<br><span class="accent">Intelligent AI</span></h1>
+      <p class="hero-sub">BuEasy builds intelligent automation systems that handle customer support, lead qualification, and operations — so your team can focus entirely on growth.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary btn-lg">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2 5.5L8 9.5L14 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Schedule a Call
+        </a>
+        <a href="#solutions" class="btn btn-secondary btn-lg">View Solutions</a>
+      </div>
+      <p class="hero-note">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#22c55e" stroke-width="1.4"/><path d="M4.5 7l2 2 3-3" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Free 30-min discovery call · No commitment required
+      </p>
+    </div>
+
+    <div class="hero-visual fade-in" data-delay="1">
+      <div style="font-size:11px;font-weight:600;color:var(--text-sec);letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px">Automation Workflow</div>
+      <svg viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block" aria-label="AI automation workflow diagram showing inputs flowing through AI Agent to automated outputs" role="img">
+        <defs>
+          <marker id="arrow" markerWidth="7" markerHeight="6" refX="6" refY="3" orient="auto">
+            <path d="M0,0.5 L0,5.5 L6.5,3 z" fill="#c8d4e8"/>
+          </marker>
+          <marker id="arrow-blue" markerWidth="7" markerHeight="6" refX="6" refY="3" orient="auto">
+            <path d="M0,0.5 L0,5.5 L6.5,3 z" fill="#1a56db"/>
+          </marker>
+          <filter id="card-shadow" x="-8%" y="-8%" width="116%" height="124%">
+            <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="rgba(0,0,0,0.06)"/>
+          </filter>
+        </defs>
+
+        <!-- INPUT SOURCES -->
+        <!-- Chat node -->
+        <g filter="url(#card-shadow)">
+          <rect x="12" y="20" width="100" height="48" rx="8" fill="white" stroke="#e5e5e5" stroke-width="1"/>
+        </g>
+        <rect x="20" y="28" width="20" height="20" rx="5" fill="#eff4ff"/>
+        <path d="M25 34h10M25 39h7" stroke="#1a56db" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="46" y="37" font-family="Plus Jakarta Sans,sans-serif" font-size="9.5" font-weight="600" fill="#111">Chat</text>
+        <text x="46" y="49" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#888">Website visitors</text>
+        <circle cx="26" cy="55" r="3" fill="#22c55e" opacity=".85"/>
+        <text x="32" y="57.5" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="#666">Live</text>
+
+        <!-- Email node -->
+        <g filter="url(#card-shadow)">
+          <rect x="12" y="88" width="100" height="48" rx="8" fill="white" stroke="#e5e5e5" stroke-width="1"/>
+        </g>
+        <rect x="20" y="96" width="20" height="20" rx="5" fill="#fff7ed"/>
+        <rect x="23" y="100" width="14" height="9" rx="1.5" stroke="#f97316" stroke-width="1.3"/>
+        <path d="M23.5 101l7 3.5 7-3.5" stroke="#f97316" stroke-width="1.1" stroke-linecap="round"/>
+        <text x="46" y="105" font-family="Plus Jakarta Sans,sans-serif" font-size="9.5" font-weight="600" fill="#111">Email</text>
+        <text x="46" y="117" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#888">Inbound leads</text>
+        <circle cx="26" cy="123" r="3" fill="#3b82f6" opacity=".8"/>
+        <text x="32" y="125.5" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="#666">New</text>
+
+        <!-- Voice node -->
+        <g filter="url(#card-shadow)">
+          <rect x="12" y="156" width="100" height="48" rx="8" fill="white" stroke="#e5e5e5" stroke-width="1"/>
+        </g>
+        <rect x="20" y="164" width="20" height="20" rx="5" fill="#f0fdf4"/>
+        <rect x="27" y="167" width="6" height="12" rx="3" stroke="#22c55e" stroke-width="1.2"/>
+        <path d="M24 176v1a6 6 0 006 0v-1" stroke="#22c55e" stroke-width="1.1" stroke-linecap="round"/>
+        <text x="46" y="173" font-family="Plus Jakarta Sans,sans-serif" font-size="9.5" font-weight="600" fill="#111">Voice</text>
+        <text x="46" y="185" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#888">Phone calls</text>
+        <circle cx="26" cy="191" r="3" fill="#a855f7" opacity=".8"/>
+        <text x="32" y="193.5" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="#666">Active</text>
+
+        <!-- Arrows input → AI -->
+        <path d="M114 44 L152 118" stroke="#c8d4e8" stroke-width="1.2" stroke-dasharray="3.5 2.5" marker-end="url(#arrow)"/>
+        <path d="M114 112 L152 127" stroke="#c8d4e8" stroke-width="1.2" stroke-dasharray="3.5 2.5" marker-end="url(#arrow)"/>
+        <path d="M114 180 L152 138" stroke="#c8d4e8" stroke-width="1.2" stroke-dasharray="3.5 2.5" marker-end="url(#arrow)"/>
+
+        <!-- AI AGENT CENTER NODE -->
+        <g filter="url(#card-shadow)">
+          <rect x="148" y="90" width="104" height="78" rx="10" fill="#1a56db"/>
+        </g>
+        <circle cx="170" cy="110" r="12" fill="rgba(255,255,255,.12)"/>
+        <path d="M164 110h12M170 104v12" stroke="rgba(255,255,255,.65)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="170" cy="110" r="4" fill="white" opacity=".9"/>
+        <text x="188" y="107" font-family="Plus Jakarta Sans,sans-serif" font-size="10" font-weight="700" fill="white">AI Agent</text>
+        <text x="188" y="119" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="rgba(255,255,255,.7)">Processing</text>
+        <circle cx="188" cy="132" r="3" fill="#22c55e"/>
+        <text x="195" y="135" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="rgba(255,255,255,.75)">Analyzing</text>
+        <rect x="155" y="146" width="90" height="15" rx="4" fill="rgba(255,255,255,.12)"/>
+        <text x="200" y="156.5" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="rgba(255,255,255,.75)" text-anchor="middle">Multi-model · LLMs</text>
+
+        <!-- Arrows AI → outputs -->
+        <path d="M254 115 L274 50" stroke="#1a56db" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+        <path d="M254 128 L274 128" stroke="#1a56db" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+        <path d="M254 140 L274 206" stroke="#1a56db" stroke-width="1.4" marker-end="url(#arrow-blue)"/>
+
+        <!-- OUTPUT: Ticket Resolved -->
+        <g filter="url(#card-shadow)">
+          <rect x="270" y="18" width="104" height="58" rx="8" fill="white" stroke="#e5e5e5" stroke-width="1"/>
+        </g>
+        <rect x="278" y="27" width="18" height="18" rx="4" fill="#f0fdf4"/>
+        <path d="M282 36l3 3 5-5" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="302" y="35" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="700" fill="#111">Ticket Resolved</text>
+        <text x="302" y="47" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#888">Auto-response sent</text>
+        <text x="278" y="67" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="#22c55e" font-weight="600">CSAT: 96% · Avg 38s</text>
+
+        <!-- OUTPUT: Lead Qualified -->
+        <g filter="url(#card-shadow)">
+          <rect x="270" y="100" width="104" height="58" rx="8" fill="white" stroke="#e5e5e5" stroke-width="1"/>
+        </g>
+        <rect x="278" y="109" width="18" height="18" rx="4" fill="#eff4ff"/>
+        <path d="M283 118l3-3 3 3M283 121h6" stroke="#1a56db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="302" y="117" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="700" fill="#111">Lead Qualified</text>
+        <text x="302" y="129" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#888">Routed to CRM</text>
+        <text x="278" y="149" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="#1a56db" font-weight="600">Conv: +3.2x · 24/7</text>
+
+        <!-- OUTPUT: CRM Updated -->
+        <g filter="url(#card-shadow)">
+          <rect x="270" y="182" width="104" height="58" rx="8" fill="white" stroke="#e5e5e5" stroke-width="1"/>
+        </g>
+        <rect x="278" y="191" width="18" height="18" rx="4" fill="#faf5ff"/>
+        <path d="M283 200h8M283 203.5h5M283 207h7" stroke="#a855f7" stroke-width="1.3" stroke-linecap="round"/>
+        <text x="302" y="199" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="700" fill="#111">CRM Updated</text>
+        <text x="302" y="211" font-family="Plus Jakarta Sans,sans-serif" font-size="8" fill="#888">Data synced auto</text>
+        <text x="278" y="231" font-family="Plus Jakarta Sans,sans-serif" font-size="7.5" fill="#a855f7" font-weight="600">0 manual entries</text>
+
+        <!-- Status bar -->
+        <rect x="12" y="254" width="362" height="26" rx="6" fill="rgba(26,86,219,.04)" stroke="rgba(26,86,219,.1)" stroke-width="1"/>
+        <circle cx="24" cy="267" r="3.5" fill="#22c55e"/>
+        <text x="33" y="270.5" font-family="Plus Jakarta Sans,sans-serif" font-size="8.5" fill="#666" font-weight="500">All systems operational · 2,841 requests processed · 99.9% uptime</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ██████ LOGOS BAR ██████ -->
+<div class="logos-bar" aria-label="Trusted by these companies">
+  <div class="container">
+    <p class="logos-label">Trusted by growing businesses</p>
+    <div class="logos-row">
+      <span class="logo-item">Veridian</span>
+      <span class="logo-item">NexaFlow</span>
+      <span class="logo-item">Arctis</span>
+      <span class="logo-item">Lumira</span>
+      <span class="logo-item">Stratum</span>
+      <span class="logo-item">Novagen</span>
+    </div>
+  </div>
+</div>
+
+<!-- ██████ STATS ██████ -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item fade-in">
+        <div class="stat-num">60<span>%</span></div>
+        <div class="stat-label">Faster customer response time</div>
+      </div>
+      <div class="stat-item fade-in" data-delay="1">
+        <div class="stat-num">3<span>x</span></div>
+        <div class="stat-label">Improvement in lead conversion</div>
+      </div>
+      <div class="stat-item fade-in" data-delay="2">
+        <div class="stat-num">24<span>/7</span></div>
+        <div class="stat-label">Automated support coverage</div>
+      </div>
+      <div class="stat-item fade-in" data-delay="3">
+        <div class="stat-num">40<span>%</span></div>
+        <div class="stat-label">Reduction in operational costs</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ██████ PROBLEM ██████ -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">The Problem</span>
+      <h2 class="section-title">Businesses Are Drowning<br>in Manual Work</h2>
+      <p class="section-sub">Every hour your team spends on repetitive tasks is an hour not spent on growth. AI automation eliminates the bottlenecks.</p>
+    </div>
+
+    <div class="problem-grid fade-in">
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="14" height="10" rx="2" stroke="#666" stroke-width="1.3"/>
+            <path d="M3 6l7 4.5L17 6" stroke="#666" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="16" cy="5" r="2.5" fill="#ef4444"/>
+            <text x="14.4" y="6.8" font-size="4" fill="white" font-weight="700">9</text>
+          </svg>
+        </div>
+        <h3>Customer Support Overload</h3>
+        <p>Your support team is buried in repetitive tickets, leading to slow response times, frustrated customers, and agent burnout — while complex issues go unresolved.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="8" cy="8" r="4" stroke="#666" stroke-width="1.3"/>
+            <path d="M8 13v4M5 17h6" stroke="#666" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M14.5 5l1.5-1.5M16.5 8h1.5" stroke="#ef4444" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Leads Not Followed Up</h3>
+        <p>Potential customers fall through the cracks because your team can't manually follow up with every inquiry. Every missed lead is lost revenue.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="5.5" height="5.5" rx="1" stroke="#666" stroke-width="1.3"/>
+            <rect x="11.5" y="3" width="5.5" height="5.5" rx="1" stroke="#666" stroke-width="1.3"/>
+            <rect x="3" y="11.5" width="5.5" height="5.5" rx="1" stroke="#666" stroke-width="1.3"/>
+            <rect x="11.5" y="11.5" width="5.5" height="5.5" rx="1" stroke="#666" stroke-width="1.3"/>
+          </svg>
+        </div>
+        <h3>Manual Repetitive Processes</h3>
+        <p>Data entry, report generation, scheduling, and internal workflows eat up hundreds of hours monthly — tasks that AI can handle in seconds.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="7" stroke="#666" stroke-width="1.3"/>
+            <path d="M10 5.5v5l3.5 2" stroke="#ef4444" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Slow Response Time</h3>
+        <p>Customers expect instant responses. A 24-hour delay costs you trust, conversions, and competitive advantage to faster-moving rivals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██████ SOLUTIONS ██████ -->
+<section class="section section-alt" id="solutions">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="section-tag">Our Solutions</span>
+      <h2 class="section-title">AI Systems That Work For You</h2>
+      <p class="section-sub">Purpose-built automation tailored to your business workflows — not generic tools, but intelligent systems designed around how you operate.</p>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="sol-card fade-in">
+        <div class="sol-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="14" height="10" rx="2.5" stroke="#1a56db" stroke-width="1.3"/>
+            <path d="M7 9h3M7 12h5" stroke="#1a56db" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="14" cy="10" r="1.5" fill="#1a56db" opacity=".4"/>
+          </svg>
+        </div>
+        <h3>AI Chatbots</h3>
+        <p>Intelligent chatbots that handle customer inquiries, qualify leads, and book appointments — live 24/7 on your website, WhatsApp, or app.</p>
+      </div>
+      <div class="sol-card fade-in" data-delay="1">
+        <div class="sol-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="7" y="3" width="6" height="10" rx="3" stroke="#1a56db" stroke-width="1.3"/>
+            <path d="M4 10.5v.5a6 6 0 0012 0v-.5" stroke="#1a56db" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M10 14v3M8 17h4" stroke="#1a56db" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>AI Voice Agents</h3>
+        <p>Human-sounding voice AI that handles inbound calls, follows up with leads, and conducts surveys — without hold times or missed calls.</p>
+      </div>
+      <div class="sol-card fade-in" data-delay="2">
+        <div class="sol-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="7.5" r="3.5" stroke="#1a56db" stroke-width="1.3"/>
+            <path d="M3.5 17c0-3.3 2.9-6 6.5-6s6.5 2.7 6.5 6" stroke="#1a56db" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M14 5l1.5 1.5M15.5 5L14 6.5" stroke="#1a56db" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Lead Qualification</h3>
+        <p>Automatically score, qualify, and route leads based on your ICP. Only sales-ready prospects reach your team — timed perfectly for conversion.</p>
+      </div>
+      <div class="sol-card fade-in" data-delay="3">
+        <div class="sol-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h3l2-5 2 10 2-7 2 2h2" stroke="#1a56db" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Workflow Automation</h3>
+        <p>Connect your tools and automate complex multi-step processes — from data entry and reporting to approvals and scheduling — with zero manual effort.</p>
+      </div>
+      <div class="sol-card fade-in" data-delay="4">
+        <div class="sol-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="14" height="10" rx="2" stroke="#1a56db" stroke-width="1.3"/>
+            <path d="M7 9h6M7 12h4" stroke="#1a56db" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="15.5" cy="5" r="2.5" fill="#22c55e"/>
+            <path d="M14.2 5l.9.9 1.7-1.5" stroke="white" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Customer Support Automation</h3>
+        <p>Resolve up to 80% of support tickets automatically with context-aware AI. Human agents handle only what requires real empathy and judgment.</p>
+      </div>
+      <div class="sol-card fade-in" data-delay="5">
+        <div class="sol-card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="3" y="12" width="3" height="5" rx="1" fill="#1a56db" opacity=".4"/>
+            <rect x="8.5" y="8" width="3" height="9" rx="1" fill="#1a56db" opacity=".65"/>
+            <rect x="14" y="4" width="3" height="13" rx="1" fill="#1a56db"/>
+          </svg>
+        </div>
+        <h3>AI Analytics Dashboards</h3>
+        <p>Real-time visibility into your automation performance, customer trends, and business health — with AI-generated insights that surface what matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██████ HOW IT WORKS ██████ -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="section-tag">Process</span>
+      <h2 class="section-title">From Idea to Automation<br>in Three Steps</h2>
+      <p class="section-sub">We handle the entire process — from mapping your workflows to deploying and continuously optimizing your AI systems.</p>
+    </div>
+
+    <div class="hiw-steps fade-in">
+      <div class="hiw-line" aria-hidden="true"></div>
+      <div class="hiw-step">
+        <div class="hiw-num">01</div>
+        <div class="hiw-step-tag">Discovery</div>
+        <h3>Analyze Your Workflows</h3>
+        <p>We conduct a deep-dive into your current processes, identifying high-impact automation opportunities and understanding your team's actual pain points.</p>
+      </div>
+      <div class="hiw-step active">
+        <div class="hiw-num">02</div>
+        <div class="hiw-step-tag">Design</div>
+        <h3>Design Custom AI Systems</h3>
+        <p>Our engineers design AI automation tailored to your stack — not generic templates. Every workflow is custom-built to match how your business actually operates.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">03</div>
+        <div class="hiw-step-tag">Deploy</div>
+        <h3>Deploy &amp; Optimize</h3>
+        <p>We deploy, monitor, and iteratively improve your systems. You get dedicated support, performance reporting, and ongoing optimization as your needs evolve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██████ CASE STUDIES ██████ -->
+<section class="section section-alt" id="case-studies">
+  <div class="container">
+    <div class="section-header fade-in" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px">
+      <div>
+        <span class="section-tag">Case Studies</span>
+        <h2 class="section-title">Real Results, Real Businesses</h2>
+        <p class="section-sub" style="max-width:460px">Not case study fluff — here's what our clients actually achieved within 90 days of going live.</p>
+      </div>
+      <a href="#contact" class="btn btn-secondary">View All Case Studies</a>
+    </div>
+
+    <div class="cs-grid">
+      <div class="cs-card fade-in">
+        <div class="cs-card-top">
+          <span class="cs-tag">E-Commerce · Chatbot</span>
+          <h3>Reduced support backlog from 800 tickets to near-zero in 3 weeks</h3>
+          <p>A fast-growing D2C brand was drowning in post-purchase queries. We deployed a context-aware AI agent trained on their entire product catalog.</p>
+        </div>
+        <div class="cs-card-metrics">
+          <div class="cs-metric">
+            <span class="cs-metric-num">60%</span>
+            <span class="cs-metric-label">Faster average response time</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric-num">83%</span>
+            <span class="cs-metric-label">Tickets resolved without human</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric-num">4.8</span>
+            <span class="cs-metric-label">Customer satisfaction score</span>
+          </div>
+        </div>
+        <a class="cs-card-footer">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7H11M7 3L11 7L7 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Read full case study
+        </a>
+      </div>
+
+      <div class="cs-card fade-in" data-delay="1">
+        <div class="cs-card-top">
+          <span class="cs-tag">B2B SaaS · Lead Automation</span>
+          <h3>Tripled qualified pipeline without adding a single SDR</h3>
+          <p>A SaaS company with an overwhelmed sales team needed more qualified demos. We built an AI qualification system integrated with HubSpot.</p>
+        </div>
+        <div class="cs-card-metrics">
+          <div class="cs-metric">
+            <span class="cs-metric-num">3x</span>
+            <span class="cs-metric-label">Lead-to-demo conversion rate</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric-num">91%</span>
+            <span class="cs-metric-label">Leads contacted within 5 min</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric-num">$0</span>
+            <span class="cs-metric-label">Extra headcount required</span>
+          </div>
+        </div>
+        <a class="cs-card-footer">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7H11M7 3L11 7L7 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Read full case study
+        </a>
+      </div>
+
+      <div class="cs-card fade-in" data-delay="2">
+        <div class="cs-card-top">
+          <span class="cs-tag">Healthcare · Voice AI</span>
+          <h3>24/7 patient intake with zero additional staffing cost</h3>
+          <p>A multi-location clinic needed after-hours support for appointment booking. We deployed an AI voice agent handling calls like a human receptionist.</p>
+        </div>
+        <div class="cs-card-metrics">
+          <div class="cs-metric">
+            <span class="cs-metric-num">24/7</span>
+            <span class="cs-metric-label">Fully automated patient coverage</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric-num">42%</span>
+            <span class="cs-metric-label">Increase in booked appointments</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric-num">65%</span>
+            <span class="cs-metric-label">Reduction in missed calls</span>
+          </div>
+        </div>
+        <a class="cs-card-footer">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7H11M7 3L11 7L7 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Read full case study
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██████ TESTIMONIALS ██████ -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="section-tag">Testimonials</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card fade-in">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <p class="test-quote">"BuEasy didn't just build a chatbot — they redesigned how our support team operates. Within six weeks, 78% of our tickets were handled without a human. Our team now focuses exclusively on complex issues."</p>
+        <div class="test-author">
+          <div class="test-avatar">S</div>
+          <div>
+            <div class="test-name">Sarah Mitchell</div>
+            <div class="test-role">Head of CX, Veridian Commerce</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card fade-in" data-delay="1">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <p class="test-quote">"The lead qualification system is legitimately the best investment we've made this year. Every demo our AEs take is properly qualified. Our close rate went from 18% to 31% in two months."</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#f0fdf4;color:#16a34a">J</div>
+          <div>
+            <div class="test-name">James Okonkwo</div>
+            <div class="test-role">VP Sales, NexaFlow</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card fade-in" data-delay="2">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" aria-hidden="true"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
+        </div>
+        <p class="test-quote">"We were skeptical that AI voice could sound natural enough for patient-facing calls. BuEasy proved us wrong. Patients regularly don't realize they're talking to AI. It's remarkable."</p>
+        <div class="test-author">
+          <div class="test-avatar" style="background:#faf5ff;color:#9333ea">A</div>
+          <div>
+            <div class="test-name">Dr. Anika Patel</div>
+            <div class="test-role">Operations Director, Lumira Health</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██████ CTA ██████ -->
+<section class="cta-section section-alt" id="contact">
+  <div class="cta-inner">
+    <div class="cta-box">
+      <span class="section-tag">Get Started</span>
+      <h2>Ready to <span class="accent">Automate</span><br>Your Business?</h2>
+      <p>Book a free 30-minute discovery call. We'll map out exactly which of your workflows are ready for AI — and what ROI you can realistically expect within 90 days.</p>
+      <a href="#" class="btn btn-primary btn-xl">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2" y="3" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 2v2M12 2v2M2 7h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Schedule a Free Call
+      </a>
+      <p class="cta-sub">No pitch decks. No long sales cycles. Just a real conversation about your business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ██████ FOOTER ██████ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M7.5 1.5L13 5v5L7.5 13.5L2 10V5L7.5 1.5Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
+              <circle cx="7.5" cy="7.5" r="2" fill="white"/>
+            </svg>
+          </div>
+          BuEasy
+        </div>
+        <p class="footer-desc">AI automation agency building intelligent systems for businesses that want to scale without scaling headcount.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 7v4M5 5.5v.01" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M8 11V8.5c0-1 .5-1.5 1.5-1.5S11 7.5 11 8.5V11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" aria-label="X (Twitter)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l4.2 5.5L3 13h1l3.5-3.7L10.5 13H14l-4.5-5.8L13 3h-1L9 6.5 6 3H3z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:hello@bueasy.ai" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="4" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 5.5l6 4 6-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#hero">About Us</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#testimonials">Clients</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#solutions">AI Chatbots</a></li>
+          <li><a href="#solutions">AI Voice Agents</a></li>
+          <li><a href="#solutions">Lead Qualification</a></li>
+          <li><a href="#solutions">Workflow Automation</a></li>
+          <li><a href="#solutions">Support Automation</a></li>
+          <li><a href="#solutions">AI Analytics</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@bueasy.ai">hello@bueasy.ai</a></li>
+          <li><a href="#contact">Schedule a Call</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">London, UK &amp; Remote</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 BuEasy. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 14V4M4.5 8.5L9 4l4.5 4.5" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+// ── Mobile Menu ──
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  mobileMenu.classList.toggle('open', isOpen);
+});
+
+// Close on link click
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+  }
+});
+
+// ── Scroll Fade-In (IntersectionObserver) ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Smooth anchor scroll ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#' || href.length < 2) return; // skip bare # links
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const navH = document.getElementById('navbar').offsetHeight;
+      const y = target.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
+
+// ── Navbar: shadow + active link ──
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+
+function onScroll() {
+  const nav = document.getElementById('navbar');
+  const scrollY = window.scrollY;
+
+  // Shadow
+  nav.classList.toggle('scrolled', scrollY > 10);
+
+  // Active link
+  let current = '';
+  sections.forEach(s => {
+    const top = s.offsetTop - nav.offsetHeight - 60;
+    if (scrollY >= top) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+
+  // Back to top
+  document.getElementById('backTop').classList.toggle('show', scrollY > 600);
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// ── Back to top ──
+document.getElementById('backTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ── Escape key closes mobile menu ──
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && hamburger.classList.contains('open')) {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    hamburger.focus();
+  }
+});
+</script>
+</body>
+</html>
